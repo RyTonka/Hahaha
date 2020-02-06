@@ -10,7 +10,7 @@
  <button onclick="buy()"> Buy </button> <br>
  <button onclick="sell()"> Sell </button> <br> 
  <button onclick="jet()"> Jet </button> <br> 
- <button id="seeLoanShark"> See Loan Shark </button> <br>
+ <button onclick="seeLoanShark()"> See Loan Shark </button> <br>
  <button id="visitBank"> Visit Bank</button> <br>
 
 <script>
@@ -19,6 +19,7 @@ var priceMultiplier = 1;
 var dayNumber = 1;
 var ProductHolding = 0;
 var currentPlace;
+var debt = 1;
 
 var CPrice = Math.floor(priceMultiplier * Math.random() * (100000 - 28000)) + 28000;
 var HPrice = Math.floor(priceMultiplier * Math.random() * (100 - 10)) + 10;
@@ -165,7 +166,7 @@ productSelling = 0;
 }
 }
 function jet() {
-var destination = prompt("Where do you want to go?\nBronx=1\nGhetto=2\nCentral Park=3\nManhatten=4\nConey Island=5\nBrooklyn=6");
+var destination = prompt("Where do you want to go?\nThe Bronx=1\nGhetto=2\nCentral Park=3\nManhatten=4\nConey Island=5\nBrooklyn=6");
 if (destination === "1" && currentPlace !== 1) {
 dayNumber += 1;
 priceMultiplier = 1;
@@ -235,6 +236,28 @@ alert("Arrived");
 } else {alert("You did something wrong or you are already there");}
 }
 
+function seeLoanShark() {
+if (currentPlace === 1) {
+var choiceLoanShark = prompt("Repay=1 - Borrow=2");
+if (choiceLoanShark === "1" && debt>0) {
+var amountRepay = prompt("How much do you want to repay?\nYou're debt is $" + debt + "\nYour Wallet has $" + money);
+if ((money - amountRepay) >= 0 && (amountRepay <= debt)) {
+money -= amountRepay;
+debt -= amountRepay;
+alert("Done");
+choiceLoanShark = 0;
+amountRepay = 0;
+}
+} else if (choiceLoanShark === "1" && debt === 0) {alert("You have no debt");} else if (choiceLoanShark === "2") {
+var amountBorrow = prompt("How much do you want to borrow?\nYou're debt is $" + debt + "\nYour Wallet has $" + money);
+if (Number(amountBorrow) > 500) {alert("You think he's crazy man?!");} else if (amountBorrow<=0) {alert("You have to borrow more than $0");} else if (amountBorrow > 0) {
+money += Number(amountBorrow);
+debt += Number(amountBorrow);
+alert("Done");
+}
+}
+} else if (currentPlace !== 1) {alert("The loan shark only deals in the The Bronx")}
+}
 
 </script>
  
