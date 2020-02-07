@@ -21,3 +21,7 @@
   box-shadow: 0 5px #666;
   transform: translateY(4px);
 }
+
+h1 {
+  font-size: 40px;
+}
