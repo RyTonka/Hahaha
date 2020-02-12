@@ -274,8 +274,12 @@ alert("TIP: When typing in the name of a product make sure to only use the first
 }
  
 function upgrades() {
-var upgradeBuying = prompt("What upgrade do you want to buy?\n1 = More Inventory Space
-
+var upgradeBuying = prompt("What upgrade do you want to buy?\n1 = More Inventory Space ($500)
+if (upgradeBuying === "1" && money >= 500) {
+money -= 500;
+maxInventory += 20;
+alert("More Inventory Space has been purchased");
+}
                            }
 </script>
  
