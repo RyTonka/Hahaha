@@ -24,7 +24,7 @@ var priceMultiplier = 1;
 var dayNumber = 1;
 var ProductHolding = 0;
 var currentPlace;
-var debt = 1;
+var debt = 50;
 var maxInventory = 100;
 var randomChance = Math.floor(priceMultiplier * Math.random() * (21 - 1)) + 1;
 
@@ -255,8 +255,7 @@ APrice = Math.floor(priceMultiplier * Math.random() * (30000 - 10000)) + 10000;
 WPrice = Math.floor(priceMultiplier * Math.random() * (12000 - 5000)) + 5000;
 SPrice = Math.floor(priceMultiplier * Math.random() * (4000 - 2000)) + 2000;
 LPrice = Math.floor(priceMultiplier * Math.random() * (100 - 10)) + 10;
-debt += (debt*.1);
-ceil(debt);
+debt += (debt*2);
 alert("Arrived");
 randomEvents();
 } 
