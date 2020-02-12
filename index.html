@@ -26,6 +26,7 @@ var ProductHolding = 0;
 var currentPlace;
 var debt = 1;
 var maxInventory = 100;
+var randomChance = Math.floor(priceMultiplier * Math.random() * (21 - 1)) + 1;
 
 var CPrice = Math.floor(priceMultiplier * Math.random() * (100000 - 28000)) + 28000;
 var HPrice = Math.floor(priceMultiplier * Math.random() * (50000 - 20000)) + 20000;
@@ -255,7 +256,29 @@ WPrice = Math.floor(priceMultiplier * Math.random() * (12000 - 5000)) + 5000;
 SPrice = Math.floor(priceMultiplier * Math.random() * (4000 - 2000)) + 2000;
 LPrice = Math.floor(priceMultiplier * Math.random() * (100 - 10)) + 10;
 alert("Arrived");
+randomEvents();
 } 
+
+function randomEvents() {
+randomChance = Math.floor(priceMultiplier * Math.random() * (51 - 1)) + 1;
+if (randomChance === 1) {alert("C Prices are going up!!"); 
+CPrice = Math.floor(priceMultiplier * Math.random() * (120000 - 90000)) + 90000;} else if (randomChance === 2) {alert("H Prices are going up here!!"); 
+HPrice = Math.floor(priceMultiplier * Math.random() * (75000 - 40000)) + 40000;} else if (randomChance === 3) {alert("A Prices are going up here!!"); 
+APrice = Math.floor(priceMultiplier * Math.random() * (45000 - 30000)) + 30000;} else if (randomChance === 4) {alert("W Prices are going up here!!"); 
+WPrice = Math.floor(priceMultiplier * Math.random() * (18000 - 12000)) + 12000;} else if (randomChance === 5) {alert("S Prices are going up here!!"); 
+SPrice = Math.floor(priceMultiplier * Math.random() * (7000 - 3700)) + 3700;} else if (randomChance === 6) {alert("L Prices are going up here!!"); 
+LPrice = Math.floor(priceMultiplier * Math.random() * (150 - 85)) + 85;} 
+
+                 else if (randomChance === 7) {alert("C Prices are going down here!!"); 
+CPrice = Math.floor(priceMultiplier * Math.random() * (30000 - 28000)) + 28000;} else if (randomChance === 8) {alert("H Prices are going down here!!"); 
+HPrice = Math.floor(priceMultiplier * Math.random() * (20000 - 15000)) + 15000;} else if (randomChance === 9) {alert("A Prices are going down here!!"); 
+APrice = Math.floor(priceMultiplier * Math.random() * (10000 - 5000)) + 5000;} else if (randomChance === 10) {alert("W Prices are going down here!!"); 
+WPrice = Math.floor(priceMultiplier * Math.random() * (5000 - 2000)) + 2000;} else if (randomChance === 11) {alert("S Prices are going down here!!"); 
+SPrice = Math.floor(priceMultiplier * Math.random() * (2000 - 500)) + 500;} else if (randomChance === 12) {alert("L Prices are going down here!!"); 
+LPrice = Math.floor(priceMultiplier * Math.random() * (30 - 5)) + 5;} 
+
+}
+
 </script>
  
  </body>
