@@ -53,7 +53,7 @@ function buy() {
 var productBuying = prompt("What to buy?");
 if (productBuying === "C") {
 var ProductHolding = CHolding + HHolding + AHolding + WHolding + SHolding + LHolding;
-var amountBuying = prompt("How much do you want to buy?\nYou can afford " + Math.floor(money/CPrice) + "\nYou can hold " + (100-ProductHolding));
+var amountBuying = prompt("How much do you want to buy?\nYou can afford " + Math.floor(money/CPrice) + "\nYou can hold " + (maxInventory-ProductHolding));
 if (money - (amountBuying * CPrice) >= 0 && (maxInventory-ProductHolding-amountBuying) >= 0 && amountBuying > 0) {
 money = money - (amountBuying * CPrice);
 ProductHolding += amountBuying;
@@ -64,7 +64,7 @@ productBuying = 0;
 } else {alert("You did something wrong");}
 } else if (productBuying === "H") {
 var ProductHolding = CHolding + HHolding + AHolding + WHolding + SHolding + LHolding;
-var amountBuying = prompt("How much do you want to buy?\nYou can afford " + Math.floor(money/HPrice) + "\nYou can hold " + (100-ProductHolding));
+var amountBuying = prompt("How much do you want to buy?\nYou can afford " + Math.floor(money/HPrice) + "\nYou can hold " + (maxInventory-ProductHolding));
 if (money - (amountBuying * HPrice) >= 0 && (maxInventory-ProductHolding-amountBuying) >= 0 && amountBuying > 0) {
 money = money - (amountBuying * HPrice);
 ProductHolding += amountBuying;
@@ -75,7 +75,7 @@ productBuying = 0;
 } else {alert("You did something wrong");}
 } else if (productBuying === "A") {
 var ProductHolding = CHolding + HHolding + AHolding + WHolding + SHolding + LHolding;
-var amountBuying = prompt("How much do you want to buy?\nYou can afford " + Math.floor(money/APrice) + "\nYou can hold " + (100-ProductHolding));
+var amountBuying = prompt("How much do you want to buy?\nYou can afford " + Math.floor(money/APrice) + "\nYou can hold " + (maxInventory-ProductHolding));
 if (money - (amountBuying * APrice) >= 0 && (maxInventory-ProductHolding-amountBuying) >= 0 && amountBuying > 0) {
 money = money - (amountBuying * APrice);
 ProductHolding += amountBuying;
@@ -86,7 +86,7 @@ productBuying = 0;
 } else {alert("You did something wrong");}
 } else if (productBuying === "W") {
 var ProductHolding = CHolding + HHolding + AHolding + WHolding + SHolding + LHolding;
-var amountBuying = prompt("How much do you want to buy?\nYou can afford " + Math.floor(money/WPrice) + "\nYou can hold " + (100-ProductHolding));
+var amountBuying = prompt("How much do you want to buy?\nYou can afford " + Math.floor(money/WPrice) + "\nYou can hold " + (maxInventory-ProductHolding));
 if (money - (amountBuying * WPrice) >= 0 && (maxInventory-ProductHolding-amountBuying) >= 0 && amountBuying > 0) {
 money = money - (amountBuying * WPrice);
 ProductHolding += amountBuying;
@@ -97,7 +97,7 @@ productBuying = 0;
 } else {alert("You did something wrong");}
 } else if (productBuying === "S") {
 var ProductHolding = CHolding + HHolding + AHolding + WHolding + SHolding + LHolding;
-var amountBuying = prompt("How much do you want to buy?\nYou can afford " + Math.floor(money/SPrice) + "\nYou can hold " + (100-ProductHolding));
+var amountBuying = prompt("How much do you want to buy?\nYou can afford " + Math.floor(money/SPrice) + "\nYou can hold " + (maxInventory-ProductHolding));
 if (money - (amountBuying * SPrice) >= 0 && (maxInventory-ProductHolding-amountBuying) >= 0 && amountBuying > 0) {
 money = money - (amountBuying * SPrice);
 ProductHolding += amountBuying;
@@ -108,7 +108,7 @@ productBuying = 0;
 } else {alert("You did something wrong");}
 } else if (productBuying === "L") {
 var ProductHolding = CHolding + HHolding + AHolding + WHolding + SHolding + LHolding;
-var amountBuying = prompt("How much do you want to buy?\nYou can afford " + Math.floor(money/LPrice) + "\nYou can hold " + (100-ProductHolding));
+var amountBuying = prompt("How much do you want to buy?\nYou can afford " + Math.floor(money/LPrice) + "\nYou can hold " + (maxInventory-ProductHolding));
 if (money - (amountBuying * LPrice) >= 0 && (maxInventory-ProductHolding-amountBuying) >= 0 && amountBuying > 0) {
 money = money - (amountBuying * LPrice);
 ProductHolding += amountBuying;
