@@ -17,9 +17,11 @@
  <button class="button" onclick="visitBank()"> Visit Bank</button> <br>
  <button class="button" onclick="upgrades()"> Upgrades</button> <br>
  <button class="button" onclick="helpPressed()"> Help</button> <br>
+ <button class="button" onclick="saveGame()"> Save</button> <br>
 
-<script> 
-var money = 2000;
+<script>
+if(localStorage.money ==! null) {money = localStorage.money;} else{
+var money = 2000;}
 var priceMultiplier = 1;
 var dayNumber = 1;
 var ProductHolding = 0;
@@ -281,6 +283,10 @@ LPrice = Math.floor(priceMultiplier * Math.random() * (30 - 5)) + 5;}
 
 }
 
+function saveGame() {
+localStorage.money = money;
+alert("Game Saved");
+}
 </script>
  
  </body>
