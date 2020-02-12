@@ -15,6 +15,7 @@
  <button class="button" onclick="jet()"> Jet </button> <br> 
  <button class="button" onclick="seeLoanShark()"> See Loan Shark </button> <br>
  <button class="button" onclick="visitBank()"> Visit Bank</button> <br>
+ <button class="button" onclick="upgrades()"> Upgrades</button> <br>
  <button class="button" onclick="helpPressed()"> Help</button> <br>
 
 <script> 
@@ -24,6 +25,7 @@ var dayNumber = 1;
 var ProductHolding = 0;
 var currentPlace;
 var debt = 1;
+var maxInventory = 100;
 
 var CPrice = Math.floor(priceMultiplier * Math.random() * (100000 - 28000)) + 28000;
 var HPrice = Math.floor(priceMultiplier * Math.random() * (50000 - 20000)) + 20000;
@@ -52,7 +54,7 @@ var productBuying = prompt("What to buy?");
 if (productBuying === "C") {
 var ProductHolding = CHolding + HHolding + AHolding + WHolding + SHolding + LHolding;
 var amountBuying = prompt("How much do you want to buy?\nYou can afford " + Math.floor(money/CPrice) + "\nYou can hold " + (100-ProductHolding));
-if (money - (amountBuying * CPrice) >= 0 && (100-ProductHolding-amountBuying) >= 0 && amountBuying > 0) {
+if (money - (amountBuying * CPrice) >= 0 && (maxInventory-ProductHolding-amountBuying) >= 0 && amountBuying > 0) {
 money = money - (amountBuying * CPrice);
 ProductHolding += amountBuying;
 CHolding += Number(amountBuying);
@@ -63,7 +65,7 @@ productBuying = 0;
 } else if (productBuying === "H") {
 var ProductHolding = CHolding + HHolding + AHolding + WHolding + SHolding + LHolding;
 var amountBuying = prompt("How much do you want to buy?\nYou can afford " + Math.floor(money/HPrice) + "\nYou can hold " + (100-ProductHolding));
-if (money - (amountBuying * HPrice) >= 0 && (100-ProductHolding-amountBuying) >= 0 && amountBuying > 0) {
+if (money - (amountBuying * HPrice) >= 0 && (maxInventory-ProductHolding-amountBuying) >= 0 && amountBuying > 0) {
 money = money - (amountBuying * HPrice);
 ProductHolding += amountBuying;
 HHolding += Number(amountBuying);
@@ -74,7 +76,7 @@ productBuying = 0;
 } else if (productBuying === "A") {
 var ProductHolding = CHolding + HHolding + AHolding + WHolding + SHolding + LHolding;
 var amountBuying = prompt("How much do you want to buy?\nYou can afford " + Math.floor(money/APrice) + "\nYou can hold " + (100-ProductHolding));
-if (money - (amountBuying * APrice) >= 0 && (100-ProductHolding-amountBuying) >= 0 && amountBuying > 0) {
+if (money - (amountBuying * APrice) >= 0 && (maxInventory-ProductHolding-amountBuying) >= 0 && amountBuying > 0) {
 money = money - (amountBuying * APrice);
 ProductHolding += amountBuying;
 AHolding += Number(amountBuying);
@@ -85,7 +87,7 @@ productBuying = 0;
 } else if (productBuying === "W") {
 var ProductHolding = CHolding + HHolding + AHolding + WHolding + SHolding + LHolding;
 var amountBuying = prompt("How much do you want to buy?\nYou can afford " + Math.floor(money/WPrice) + "\nYou can hold " + (100-ProductHolding));
-if (money - (amountBuying * WPrice) >= 0 && (100-ProductHolding-amountBuying) >= 0 && amountBuying > 0) {
+if (money - (amountBuying * WPrice) >= 0 && (maxInventory-ProductHolding-amountBuying) >= 0 && amountBuying > 0) {
 money = money - (amountBuying * WPrice);
 ProductHolding += amountBuying;
 WHolding += Number(amountBuying);
@@ -96,7 +98,7 @@ productBuying = 0;
 } else if (productBuying === "S") {
 var ProductHolding = CHolding + HHolding + AHolding + WHolding + SHolding + LHolding;
 var amountBuying = prompt("How much do you want to buy?\nYou can afford " + Math.floor(money/SPrice) + "\nYou can hold " + (100-ProductHolding));
-if (money - (amountBuying * SPrice) >= 0 && (100-ProductHolding-amountBuying) >= 0 && amountBuying > 0) {
+if (money - (amountBuying * SPrice) >= 0 && (maxInventory-ProductHolding-amountBuying) >= 0 && amountBuying > 0) {
 money = money - (amountBuying * SPrice);
 ProductHolding += amountBuying;
 SHolding += Number(amountBuying);
@@ -107,7 +109,7 @@ productBuying = 0;
 } else if (productBuying === "L") {
 var ProductHolding = CHolding + HHolding + AHolding + WHolding + SHolding + LHolding;
 var amountBuying = prompt("How much do you want to buy?\nYou can afford " + Math.floor(money/LPrice) + "\nYou can hold " + (100-ProductHolding));
-if (money - (amountBuying * LPrice) >= 0 && (100-ProductHolding-amountBuying) >= 0 && amountBuying > 0) {
+if (money - (amountBuying * LPrice) >= 0 && (maxInventory-ProductHolding-amountBuying) >= 0 && amountBuying > 0) {
 money = money - (amountBuying * LPrice);
 ProductHolding += amountBuying;
 LHolding += Number(amountBuying);
@@ -270,6 +272,11 @@ alert("The bank does not yet work");
 function helpPressed() {
 alert("TIP: When typing in the name of a product make sure to only use the first letter, and make sure to capitalize it. For example 'C'");
 }
+ 
+function upgrades() {
+var upgradeBuying = prompt("What upgrade do you want to buy?\n1 = More Inventory Space
+
+                           }
 </script>
  
  </body>
