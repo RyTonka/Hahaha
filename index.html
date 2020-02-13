@@ -21,7 +21,7 @@
  <button class="button" onclick="loadSave()"> Load Saved Game</button> <br>
 
 <script>
-prompt("What gamemode do you want to play?\n1=Freeplay\n2=Normal Mode");
+var gamemode = prompt("What gamemode do you want to play?\n1=Freeplay\n2=Normal Mode");
 if(localStorage.isUpdated === !null){
 alert("You can now save your progress\nKeep in mind that your saved game will only be on the device you save it on");
 localStorage.isUpdated = 1;}
@@ -33,6 +33,7 @@ var currentPlace;
 var debt = 50;
 var maxInventory = 100;
 var randomChance = Math.floor(priceMultiplier * Math.random() * (21 - 1)) + 1;
+var inventorySpaceBought = 0;
 
 var CPrice = Math.floor(priceMultiplier * Math.random() * (100000 - 28000)) + 28000;
 var HPrice = Math.floor(priceMultiplier * Math.random() * (50000 - 20000)) + 20000;
@@ -289,7 +290,9 @@ function traveling() {
 debt += (debt*2);
 alert("Arrived");
 randomEvents();
+number(dayNumber);
 dayNumber += 1;
+number(dayNumber);
 } 
 
 function randomEvents() {
