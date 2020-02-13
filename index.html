@@ -125,6 +125,7 @@ var ProductHolding = CHolding + HHolding + AHolding + WHolding + SHolding + LHol
 var amountBuying = prompt("How much do you want to buy?\nYou can afford " + Math.floor(money/LPrice) + "\nYou can hold " + (maxInventory-ProductHolding));
 number(amountBuying);
 if (money - (amountBuying * LPrice) >= 0 && (maxInventory-ProductHolding-amountBuying) >= 0 && amountBuying > 0) {
+alert("the if worked");
 money = money - (amountBuying * LPrice);
 ProductHolding += amountBuying;
 LHolding += Number(amountBuying);
