@@ -18,10 +18,13 @@
  <button class="button" onclick="upgrades()"> Upgrades</button> <br>
  <button class="button" onclick="helpPressed()"> Help</button> <br>
  <button class="button" onclick="saveGame()"> Save</button> <br>
+ <button class="button" onclick="loadSave()"> Load Saved Game</button> <br>
 
 <script>
-if(localStorage.money ==! null) {money = localStorage.money;} else{
-var money = 2000;}
+if(localStorage.isUpdated === !null){
+alert("You can now save your progress\nKeep in mind that your saved game will only be on the device you save it on");
+localStorage.isUpdated = 1;}
+var money = 2000;
 var priceMultiplier = 1;
 var dayNumber = 1;
 var ProductHolding = 0;
@@ -285,8 +288,28 @@ LPrice = Math.floor(priceMultiplier * Math.random() * (30 - 5)) + 5;}
 
 function saveGame() {
 localStorage.money = money;
+localStorage.debt = money;
+localStorage.CHolding = CHolding;
+localStorage.HHolding = HHolding;
+localStorage.AHolding = AHolding;
+localStorage.WHolding = WHolding;
+localStorage.SHolding = SHolding;
+localStorage.LHolding = LHolding;
 alert("Game Saved");
 }
+ 
+function loadSave() {
+if(localStorage.money !== null) {
+money = localStorage.money;
+debt = localStorage.debt;
+CHolding = localStorage.CHolding;
+HHolding = localStorage.HHolding;
+AHolding = localStorage.AHolding;
+WHolding = localStorage.WHolding;
+SHolding = localStorage.SHolding;
+LHolding = localStorage.LHolding;
+}
+} 
 </script>
  
  </body>
