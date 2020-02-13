@@ -61,7 +61,7 @@ if (productBuying === "C") {
 var ProductHolding = CHolding + HHolding + AHolding + WHolding + SHolding + LHolding;
 var amountBuying = prompt("How much do you want to buy?\nYou can afford " + Math.floor(money/CPrice) + "\nYou can hold " + (maxInventory-ProductHolding));
 if (money - (amountBuying * CPrice) >= 0 && (maxInventory-ProductHolding-amountBuying) >= 0 && amountBuying > 0) {
-money = number(money); - (amountBuying * CPrice);
+money = money - (amountBuying * CPrice);
 ProductHolding += amountBuying;
 CHolding += Number(amountBuying);
 alert("It worked");
