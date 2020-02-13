@@ -21,6 +21,7 @@
  <button class="button" onclick="loadSave()"> Load Saved Game</button> <br>
 
 <script>
+prompt("What gamemode do you want to play?\n1=Freeplay\n2=Normal Mode");
 if(localStorage.isUpdated === !null){
 alert("You can now save your progress\nKeep in mind that your saved game will only be on the device you save it on");
 localStorage.isUpdated = 1;}
