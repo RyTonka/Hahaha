@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<h1> Letter Warsmwowjds </h1>
+<h1> stupid </h1>
 
 <link rel="stylesheet" href="index.css">
 
@@ -123,7 +123,6 @@ productBuying = 0;
 } else if (productBuying === "L") {
 var ProductHolding = CHolding + HHolding + AHolding + WHolding + SHolding + LHolding;
 var amountBuying = prompt("How much do you want to buy?\nYou can afford " + Math.floor(money/LPrice) + "\nYou can hold " + (maxInventory-ProductHolding));
-number(amountBuying);
 if (money - (amountBuying * LPrice) >= 0 && (maxInventory-ProductHolding-amountBuying) >= 0 && amountBuying > 0) {
 alert("the if worked");
 money = money - (amountBuying * LPrice);
