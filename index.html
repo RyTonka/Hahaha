@@ -285,7 +285,7 @@ alert("More Inventory Space has been purchased");
 }
 
 function traveling() {
-debt += (debt*2);
+debt = Math.floor(debt+(0.1*debt));
 alert("Arrived");
 randomEvents();
 number(dayNumber);
@@ -337,6 +337,14 @@ WHolding = localStorage.WHolding;
 SHolding = localStorage.SHolding;
 LHolding = localStorage.LHolding;
 dayNumber = localStorage.dayNumber;
+number(CHolding);
+number(HHolding);
+number(AHolding);
+number(WHolding);
+number(SHolding);
+number(LHolding);
+number(dayNumber);
+number(debt);
 alert("Your save has been loaded");
 }else {alert("It appears you don't have a saved game on this device");}
 } 
