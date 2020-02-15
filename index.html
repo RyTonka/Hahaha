@@ -135,7 +135,7 @@ if (amountSelling > 0 && (CHolding - amountSelling) >= 0) {
 money += (amountSelling * CPrice);
 CHolding -= amountSelling;
 alert("Product Sold");
-} else {alert("You did something wrong");}
+} 
 } else if (productSelling === "H") {
 var amountSelling = prompt("How much do you want to sell?\nYou have " + HHolding);
 if (amountSelling > 0 && (HHolding - amountSelling) >= 0) {
@@ -143,7 +143,7 @@ money += (amountSelling * HPrice);
 HHolding -= amountSelling;
 alert("Product Sold");
 productSelling = 0;
-} else {alert("You did something wrong");}
+} 
 } else if (productSelling === "A") {
 var amountSelling = prompt("How much do you want to sell?\nYou have " + AHolding);
 if (amountSelling > 0 && (AHolding - amountSelling) >= 0) {
@@ -151,7 +151,7 @@ money += (amountSelling * APrice);
 AHolding -= amountSelling;
 alert("Product Sold");
 productSelling = 0;
-} else {alert("You did something wrong");}
+} 
 } else if (productSelling === "W") {
 var amountSelling = prompt("How much do you want to sell?\nYou have " + WHolding);
 if (amountSelling > 0 && (WHolding - amountSelling) >= 0) {
@@ -159,7 +159,7 @@ money += (amountSelling * WPrice);
 WHolding -= amountSelling;
 alert("Product Sold");
 productSelling = 0;
-} else {alert("You did something wrong");}
+} 
 } else if (productSelling === "S") {
 var amountSelling = prompt("How much do you want to sell?\nYou have " + SHolding);
 if (amountSelling > 0 && (SHolding - amountSelling) >= 0) {
@@ -167,7 +167,7 @@ money += (amountSelling * SPrice);
 SHolding -= amountSelling;
 alert("Product Sold");
 productSelling = 0;
-} else {alert("You did something wrong");}
+} 
 } else if (productSelling === "L") {
 var amountSelling = prompt("How much do you want to sell?\nYou have " + LHolding);
 if (amountSelling > 0 && (LHolding - amountSelling) >= 0) {
@@ -175,7 +175,7 @@ money += (amountSelling * LPrice);
 LHolding -= amountSelling;
 alert("Product Sold");
 productSelling = 0;
-} else {alert("You did something wrong");}
+} 
 }
 }
 function jet() {
@@ -240,7 +240,7 @@ WPrice = Math.floor(priceMultiplier * Math.random() * (12000 - 5000)) + 5000;
 SPrice = Math.floor(priceMultiplier * Math.random() * (4000 - 2000)) + 2000;
 LPrice = Math.floor(priceMultiplier * Math.random() * (100 - 10)) + 10;
 traveling();
-} else {alert("You did something wrong or you are already there");}
+} 
 }
 
 function seeLoanShark() {
@@ -287,10 +287,8 @@ alert("More Inventory Space has been purchased");
 function traveling() {
 debt = Math.floor(debt+(0.1*debt));
 alert("Arrived");
-randomEvents();
-number(dayNumber);
 dayNumber += 1;
-number(dayNumber);
+randomEvents();
 } 
 
 function randomEvents() {
@@ -315,15 +313,16 @@ LPrice = Math.floor(priceMultiplier * Math.random() * (30 - 5)) + 5;}
 
 function saveGame() {
 localStorage.money = money;
-localStorage.debt = money;
+localStorage.debt = debt;
 localStorage.CHolding = CHolding;
 localStorage.HHolding = HHolding;
 localStorage.AHolding = AHolding;
 localStorage.WHolding = WHolding;
 localStorage.SHolding = SHolding;
 localStorage.LHolding = LHolding;
-localStorage.dayNumber = debt;
+localStorage.dayNumber = dayNumber;
 alert("Game Saved");
+alert(localStorage.dayNumber);
 }
  
 function loadSave() {
