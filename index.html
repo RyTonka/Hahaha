@@ -114,7 +114,7 @@ productBuying = 0;
 } else {alert("You did something wrong");}
 } else if (productBuying === "L") {
 var ProductHolding = CHolding + HHolding + AHolding + WHolding + SHolding + LHolding;
-var amountBuying = prompt("How much do you want to buy?\nYou can afford " + Math.floor(money/LPrice) + "\nYou can hold " + (maxInventory-ProductHolding));
+var amountBuying = parseInt(prompt("How much do you want to buy?\nYou can afford " + Math.floor(money/LPrice) + "\nYou can hold " + (maxInventory-ProductHolding)));
 if (money - (amountBuying * LPrice) >= 0 && (maxInventory-ProductHolding-amountBuying) >= 0 && amountBuying > 0) {
 money = money - (amountBuying * LPrice);
 ProductHolding += amountBuying;
@@ -134,6 +134,7 @@ var amountSelling = prompt("How much do you want to sell?\nYou have " + CHolding
 if (amountSelling > 0 && (CHolding - amountSelling) >= 0) {
 money += (amountSelling * CPrice);
 CHolding -= amountSelling;
+ProductHolding -= AmountSelling;
 alert("Product Sold");
 } 
 } else if (productSelling === "H") {
@@ -141,6 +142,7 @@ var amountSelling = prompt("How much do you want to sell?\nYou have " + HHolding
 if (amountSelling > 0 && (HHolding - amountSelling) >= 0) {
 money += (amountSelling * HPrice);
 HHolding -= amountSelling;
+ProductHolding -= AmountSelling;
 alert("Product Sold");
 productSelling = 0;
 } 
@@ -149,6 +151,7 @@ var amountSelling = prompt("How much do you want to sell?\nYou have " + AHolding
 if (amountSelling > 0 && (AHolding - amountSelling) >= 0) {
 money += (amountSelling * APrice);
 AHolding -= amountSelling;
+ProductHolding -= AmountSelling;
 alert("Product Sold");
 productSelling = 0;
 } 
@@ -157,6 +160,7 @@ var amountSelling = prompt("How much do you want to sell?\nYou have " + WHolding
 if (amountSelling > 0 && (WHolding - amountSelling) >= 0) {
 money += (amountSelling * WPrice);
 WHolding -= amountSelling;
+ProductHolding -= AmountSelling;
 alert("Product Sold");
 productSelling = 0;
 } 
@@ -165,6 +169,7 @@ var amountSelling = prompt("How much do you want to sell?\nYou have " + SHolding
 if (amountSelling > 0 && (SHolding - amountSelling) >= 0) {
 money += (amountSelling * SPrice);
 SHolding -= amountSelling;
+ProductHolding -= AmountSelling;
 alert("Product Sold");
 productSelling = 0;
 } 
@@ -173,6 +178,7 @@ var amountSelling = prompt("How much do you want to sell?\nYou have " + LHolding
 if (amountSelling > 0 && (LHolding - amountSelling) >= 0) {
 money += (amountSelling * LPrice);
 LHolding -= amountSelling;
+ProductHolding -= AmountSelling;
 alert("Product Sold");
 productSelling = 0;
 } 
@@ -312,6 +318,7 @@ LPrice = Math.floor(priceMultiplier * Math.random() * (30 - 5)) + 5;}
 }
 
 function saveGame() {
+var ProductHolding = CHolding + HHolding + AHolding + WHolding + SHolding + LHolding;
 localStorage.money = money;
 localStorage.debt = debt;
 localStorage.CHolding = CHolding;
@@ -321,8 +328,8 @@ localStorage.WHolding = WHolding;
 localStorage.SHolding = SHolding;
 localStorage.LHolding = LHolding;
 localStorage.dayNumber = dayNumber;
+localStorage.ProductHolding = ProductHolding;
 alert("Game Saved");
-alert(localStorage.dayNumber);
 }
  
 function loadSave() {
@@ -336,6 +343,7 @@ WHolding = parseInt(localStorage.WHolding);
 SHolding = parseInt(localStorage.SHolding);
 LHolding = parseInt(localStorage.LHolding);
 dayNumber = parseInt(localStorage.dayNumber);
+ProductHolding = parseInt(localStorage.ProductHolding);
 alert("Your save has been loaded");
 }else {alert("It appears you don't have a saved game on this device");}
 } 
