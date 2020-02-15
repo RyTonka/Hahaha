@@ -328,24 +328,15 @@ alert("Game Saved");
  
 function loadSave() {
 if(localStorage.money !== null) {
-alert("Starting loading save");
-money = localStorage.money;
-debt = localStorage.debt;
-CHolding = localStorage.CHolding;
-HHolding = localStorage.HHolding;
-AHolding = localStorage.AHolding;
-WHolding = localStorage.WHolding;
-SHolding = localStorage.SHolding;
-LHolding = localStorage.LHolding;
-dayNumber = localStorage.dayNumber;
-number(CHolding);
-number(HHolding);
-number(AHolding);
-number(WHolding);
-number(SHolding);
-number(LHolding);
-number(dayNumber);
-number(debt);
+money = parseInt(localStorage.money);
+debt = parseInt(localStorage.debt);
+CHolding = parseInt(localStorage.CHolding);
+HHolding = parseInt(localStorage.HHolding);
+AHolding = parseInt(localStorage.AHolding);
+WHolding = parseInt(localStorage.WHolding);
+SHolding = parseInt(localStorage.SHolding);
+LHolding = parseInt(localStorage.LHolding);
+dayNumber = parseInt(localStorage.dayNumber);
 alert("Your save has been loaded");
 }else {alert("It appears you don't have a saved game on this device");}
 } 
