@@ -328,6 +328,8 @@ localStorage.WHolding = WHolding;
 localStorage.SHolding = SHolding;
 localStorage.LHolding = LHolding;
 localStorage.dayNumber = dayNumber;
+localStorage.maxInventory = maxInventory;
+localStorage.inventorySpaceBought = inventorySpaceBought;
 localStorage.ProductHolding = ProductHolding;
 alert("Game Saved");
 }
@@ -343,6 +345,8 @@ WHolding = parseInt(localStorage.WHolding);
 SHolding = parseInt(localStorage.SHolding);
 LHolding = parseInt(localStorage.LHolding);
 dayNumber = parseInt(localStorage.dayNumber);
+maxInventory = parseInt(localStorage.maxInventory);
+inventorySpaceBought = parseInt(localStorage.inventorySpaceBought);
 ProductHolding = parseInt(localStorage.ProductHolding);
 alert("Your save has been loaded");
 }else {alert("It appears you don't have a saved game on this device");}
