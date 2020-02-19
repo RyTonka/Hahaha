@@ -33,6 +33,10 @@ var maxInventory = 100;
 var randomChance = Math.floor(priceMultiplier * Math.random() * (21 - 1)) + 1;
 var inventorySpaceBought = 0;
 
+var ppdecision;
+var uhoh;
+var amountBribing;
+
 var CPrice = Math.floor(priceMultiplier * Math.random() * (100000 - 28000)) + 28000;
 var HPrice = Math.floor(priceMultiplier * Math.random() * (50000 - 20000)) + 20000;
 var APrice = Math.floor(priceMultiplier * Math.random() * (30000 - 10000)) + 10000;
@@ -298,7 +302,8 @@ randomEvents();
 } 
 
 function randomEvents() {
-randomChance = Math.floor(priceMultiplier * Math.random() * (51 - 1)) + 1;
+randomChance = Math.floor(priceMultiplier * Math.random() * (31 - 1)) + 1;
+alert(randomChance);
 if (randomChance === 1) {alert("C Prices are going up!!"); 
 CPrice = Math.floor(priceMultiplier * Math.random() * (120000 - 90000)) + 90000;} else if (randomChance === 2) {alert("H Prices are going up here!!"); 
 HPrice = Math.floor(priceMultiplier * Math.random() * (75000 - 40000)) + 40000;} else if (randomChance === 3) {alert("A Prices are going up here!!"); 
@@ -307,7 +312,7 @@ WPrice = Math.floor(priceMultiplier * Math.random() * (18000 - 12000)) + 12000;}
 SPrice = Math.floor(priceMultiplier * Math.random() * (7000 - 3700)) + 3700;} else if (randomChance === 6) {alert("L Prices are going up here!!"); 
 LPrice = Math.floor(priceMultiplier * Math.random() * (150 - 85)) + 85;} 
 
-                 else if (randomChance === 7) {alert("C Prices are going down here!!"); 
+                                                                                else if (randomChance === 7) {alert("C Prices are going down here!!"); 
 CPrice = Math.floor(priceMultiplier * Math.random() * (30000 - 28000)) + 28000;} else if (randomChance === 8) {alert("H Prices are going down here!!"); 
 HPrice = Math.floor(priceMultiplier * Math.random() * (20000 - 15000)) + 15000;} else if (randomChance === 9) {alert("A Prices are going down here!!"); 
 APrice = Math.floor(priceMultiplier * Math.random() * (10000 - 5000)) + 5000;} else if (randomChance === 10) {alert("W Prices are going down here!!"); 
@@ -315,8 +320,38 @@ WPrice = Math.floor(priceMultiplier * Math.random() * (5000 - 2000)) + 2000;} el
 SPrice = Math.floor(priceMultiplier * Math.random() * (2000 - 500)) + 500;} else if (randomChance === 12) {alert("L Prices are going down here!!"); 
 LPrice = Math.floor(priceMultiplier * Math.random() * (30 - 5)) + 5;} 
 
+else if (randomChance === 13 || randomChance === 14 || randomChance === 15 || randomChance === 16){
+if (money >= 100000) {
+ppdecision = prompt("THE POLICE ARE AFTER YOU!!\nWhat do you want to do?\nTry to run = 1\nTurn yourself in = 2\nBribe them = 3");
+if (ppdecision === "1") {
+if (uhoh <= 4) {
+alert("Your lucky... You got away this time"); 
+uhoh += 1;
+} else if (uhoh >= 5) {
+alert("You ran out of luck... the game is over\nYour stats have been reset");
+reset();
 }
-
+} else if (ppdecision === "2") {
+alert("You got arrested\nThe game is over\nYour stats have been reset");
+reset();
+} else if (ppdecision === "3") {
+if (uhoh>9) {
+alert("The police arrested you anyway... The game is over\nYour stats have been reset");
+reset();
+}else{
+amountBribing = prompt("How much do you want to bribe them?")
+if (amountBribing>=10000) {
+alert("You got away with bribing them");
+money -= 10000;
+} else if (amountBribing<10000) {
+alert("You didn't pay them enough... The game is over\nYour stats have been reset");
+reset();
+}
+}
+}
+}
+}
+}
 function saveGame() {
 var ProductHolding = CHolding + HHolding + AHolding + WHolding + SHolding + LHolding;
 localStorage.money = money;
@@ -351,6 +386,30 @@ ProductHolding = parseInt(localStorage.ProductHolding);
 alert("Your save has been loaded");
 }else {alert("It appears you don't have a saved game on this device");}
 } 
+
+function reset() {
+var money = 2000;
+var priceMultiplier = 1;
+var dayNumber = 1;
+var ProductHolding = 0;
+var currentPlace = 1;
+var debt = 50;
+var maxInventory = 100;
+var randomChance = Math.floor(priceMultiplier * Math.random() * (21 - 1)) + 1;
+var inventorySpaceBought = 0;
+
+var ppdecision = 0;
+var uhoh = 0;
+var amountBribing = 0;
+
+var CHolding = 0;
+var HHolding = 0;
+var AHolding = 0;
+var WHolding = 0;
+var SHolding = 0;
+var LHolding = 0;
+}
+
 </script>
  
  </body>
