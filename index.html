@@ -296,7 +296,7 @@ alert("More Inventory Space has been purchased");
 }
 
 function traveling() {
-//debt = Math.floor(debt+(0.1*debt));
+debt += Math.ceil(debt*0.1);
 dayNumber += 1;
 money -= Math.ceil(money*0.03);
 alert("Arrived");
