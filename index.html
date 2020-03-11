@@ -29,7 +29,7 @@ var priceMultiplier = 1;
 var dayNumber = 1;
 var ProductHolding = 0;
 var currentPlace = 1;
-var debt = 50;
+var debt = 5000;
 var maxInventory = 100;
 var randomChance = Math.floor(priceMultiplier * Math.random() * (21 - 1)) + 1;
 var inventorySpaceBought = 0;
@@ -296,9 +296,9 @@ alert("More Inventory Space has been purchased");
 }
 
 function traveling() {
-debt += Math.ceil(debt*0.1);
+debt += Math.ceil(debt*0.08);
 dayNumber += 1;
-money -= Math.ceil(money*0.03);
+money -= Math.ceil(money*0.02);
 alert("Arrived");
 randomEvents();
 } 
