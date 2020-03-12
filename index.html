@@ -51,6 +51,7 @@ var AHolding = 0;
 var WHolding = 0;
 var SHolding = 0;
 var LHolding = 0;
+var BankHolding = 0;
 
 function seePrices() {
 alert("The C Price is " + CPrice + "\nThe H Price is " + HPrice + "\nThe A Price is " + APrice + "\nThe W Price is " + WPrice + "\nThe S Price is " + SPrice + "\nThe L Price is " + LPrice + "\nYou have $" + money);
@@ -258,7 +259,7 @@ function seeLoanShark() {
 if (currentPlace === 1) {
 var choiceLoanShark = prompt("Repay=1 - Borrow=2");
 if (choiceLoanShark === "1" && debt>0) {
-var amountRepay = prompt("How much do you want to repay?\nYou're debt is $" + debt + "\nYour Wallet has $" + money);
+var amountRepay = prompt("How much do you want to repay?\nYour debt is $" + debt + "\nYour Wallet has $" + money);
 if ((money - amountRepay) >= 0 && (amountRepay <= debt)) {
 money -= amountRepay;
 debt -= amountRepay;
@@ -268,7 +269,7 @@ amountRepay = 0;
 }
 } else if (choiceLoanShark === "1" && debt === 0) {alert("You have no debt");} else if (choiceLoanShark === "2") {
 var amountBorrow = prompt("How much do you want to borrow?\nYou're debt is $" + debt + "\nYour Wallet has $" + money);
-if (Number(amountBorrow) > 500) {alert("You think he's crazy man?!");} else if (amountBorrow<=0) {alert("You have to borrow more than $0");} else if (amountBorrow > 0) {
+if (Number(amountBorrow) > 500) {alert("You think he's a crazy man?!");} else if (amountBorrow<=0) {alert("You have to borrow more than $0");} else if (amountBorrow > 0) {
 money += Number(amountBorrow);
 debt += Number(amountBorrow);
 alert("Done");
@@ -278,7 +279,21 @@ alert("Done");
 }
 
 function visitBank() {
-prompt("Do you want to deposit (1) or withdraw (2)");
+     var choiceBank = prompt("Do you want to deposit (1) or withdraw (2)");
+     if (choiceBank === "1") {
+          var amountDeposit = promt("How much do you want to deposit?\nYour Wallet has $" + money);
+          if (Number(amountDeposit) <= 0) {alert("Can you not do math?!");} else if (amountDeposit > 0) { 
+               money -= Number(amountDeposit);
+               BankHolding += Number(amountDeposit);
+               alert("Done");
+          }
+     }
+     if (choiceBank === "2") {
+          alert("Not Doing that yet, you just wasted your money!!!");
+     }
+     else if (choiceBank !==1 && choiceBank !== 2) {
+          alert("Do you not know how to type 1 or 2?");
+     }
 }
  
 function helpPressed() {
