@@ -280,8 +280,8 @@ alert("Done");
 
 function visitBank() {
      var choiceBank = prompt("Do you want to deposit (1) or withdraw (2)");
-     if (choiceBank === "1") {
-          var amountDeposit = promt("How much do you want to deposit?\nYour Wallet has $" + money);
+     if (choiceBank == "1") {
+          var amountDeposit = prompt("How much do you want to deposit?\nYour Wallet has $" + money);
           if (Number(amountDeposit) <= 0) {alert("Can you not do math?!");} else if (amountDeposit > 0) { 
                money -= Number(amountDeposit);
                BankHolding += Number(amountDeposit);
